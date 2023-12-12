@@ -166,10 +166,6 @@ class RedCapConnector:
             new_record_page_link
         )
 
-        st.write(
-            record
-        )
-
         cidade_nascimento = cidades.get(
             record['municipio_residencia'].upper(), ""
         )
