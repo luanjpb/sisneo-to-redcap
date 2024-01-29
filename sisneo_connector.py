@@ -53,9 +53,9 @@ class SisneoConnector:
     def apply_date_filter(self, query, data_inicial, data_final):
         return query.where(
             (
-                TbAmostra.dt_col_amostra >= int(f"{data_inicial.year}{data_inicial.month}{data_inicial.day if data_inicial.day > 9 else '0'+ str(data_inicial.day)}")
+                TbAmostra.dt_col_amostra >= int(f"{data_inicial.year}{data_inicial.month if data_inicial.month > 9 else '0'+ str(data_inicial.month)}{data_inicial.day if data_inicial.day > 9 else '0'+ str(data_inicial.day)}")
             ) & (
-                TbAmostra.dt_col_amostra <= int(f"{data_final.year}{data_final.month}{data_final.day if data_final.day > 9 else '0' + str(data_final.day)}")
+                TbAmostra.dt_col_amostra <= int(f"{data_final.year}{data_final.month if data_final.month > 9 else '0' + str(data_final.month)}{data_final.day if data_final.day > 9 else '0' + str(data_final.day)}")
             )
         )
     
